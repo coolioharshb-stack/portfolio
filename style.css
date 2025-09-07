@@ -1,0 +1,122 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #0a0a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Background Circles */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.background span {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 0, 70, 0.2);
+  border-radius: 50%;
+  animation: move 25s linear infinite;
+}
+.background span:nth-child(1) { top: 20%; left: 15%; }
+.background span:nth-child(2) { top: 60%; left: 10%; width: 150px; height: 150px; }
+.background span:nth-child(3) { top: 30%; left: 70%; }
+.background span:nth-child(4) { top: 80%; left: 80%; width: 200px; height: 200px; }
+.background span:nth-child(5) { top: 10%; left: 50%; }
+.background span:nth-child(6) { top: 50%; left: 90%; width: 120px; height: 120px; }
+.background span:nth-child(7) { top: 70%; left: 40%; }
+.background span:nth-child(8) { top: 90%; left: 20%; width: 180px; height: 180px; }
+
+@keyframes move {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-100px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10%;
+  animation: fadeIn 2s ease-in;
+}
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.content h2 span {
+  color: #ff2b4a;
+}
+.content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+.social-icons a {
+  font-size: 1.8rem;
+  color: #fff;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #ff2b4a;
+  transform: scale(1.2);
+}
+
+/* Profile */
+.profile {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #ff2b4a;
+  box-shadow: 0 0 40px rgba(255, 0, 70, 0.7);
+  animation: fadeUp 2s ease-in;
+}
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  .profile {
+    margin-top: 30px;
+    width: 220px;
+    height: 220px;
+  }
+}
